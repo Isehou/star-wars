@@ -4,11 +4,13 @@ import "./people-list.css";
 
 function PeopleList({ people }) {
   return (
-    <ul>
+    <ul className="list__container">
       {people.map(({ id, name, img }) => (
-        <li key={id}>
-          <img src={img} alt={name} />
-          <p>{name}</p>
+        <li className="list__item" key={id}>
+          <a href="#">
+            <img className="person-img" src={img} alt={name} />
+            <p>{name}</p>
+          </a>
         </li>
       ))}
     </ul>
