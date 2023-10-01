@@ -1,0 +1,21 @@
+.header {
+  background-color: rgb(82, 5, 5);
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.header-list {
+  display: flex;
+  list-style: none;
+}
+.header-link {
+  padding-left: 50px;
+  list-style: none;
+  text-transform: uppercase;
+  color: var(--theme-default-header);
+}
+.header-link a {
+  text-decoration: none;
+}
