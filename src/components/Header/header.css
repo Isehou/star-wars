@@ -14,8 +14,12 @@
   padding-left: 50px;
   list-style: none;
   text-transform: uppercase;
-  color: var(--theme-default-header);
-}
-.header-link a {
+  color: #fff;
   text-decoration: none;
+  font-size: 14pt;
+  font-weight: bold;
+}
+.header-link:hover {
+  text-decoration: none;
+  color: #a0a0a0;
 }
