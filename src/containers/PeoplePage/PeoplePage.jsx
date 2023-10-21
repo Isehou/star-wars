@@ -34,7 +34,7 @@ const PeoplePage = ({ setErrorApi }) => {
   };
 
   useEffect(() => {
-    getResource(API_PEOPLE);
+    getResource("https://swapi.dev/api/people/?page=2");
   }, []);
 
   return (

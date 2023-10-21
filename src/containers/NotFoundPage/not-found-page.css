@@ -1,0 +1,24 @@
+.nfp {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.nfp-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100pt;
+  height: 100%;
+}
+.nfp-text {
+  width: 700px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 28pt;
+  color: var(--color-yellow);
+}

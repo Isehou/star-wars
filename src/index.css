@@ -19,7 +19,10 @@ code {
   --color-dark-gray: #10100e;
   --border-radius-small: 3px;
   --font-size-header: 20pt;
+  --width-max: 1200px;
 
   --theme-default-header: #cccc46;
+  --theme-default-bgimage: url(./static/bg.jpg);
+
   --transition: 0.4s;
 }
