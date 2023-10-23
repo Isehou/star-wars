@@ -22,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<HomePage />}></Route>
           <Route path="/people" element={<PeoplePage />}></Route>
+          {/* <Route path="/people/?page=2" element={<PeoplePage />}></Route> */}
           <Route path="/*" element={<NotFoundPage />}></Route>
         </Routes>
       </div>

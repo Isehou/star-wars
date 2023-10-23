@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./header.css";
 
 function Header({ routeLinks }) {
@@ -10,9 +10,14 @@ function Header({ routeLinks }) {
           {routeLinks.map((el, i) => {
             return (
               <li key={i}>
-                <Link className="header-link" to={el.link}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "header-link active" : "header-link inactive"
+                  }
+                  to={el.link}
+                >
                   {el.label}
-                </Link>
+                </NavLink>
               </li>
             );
           })}

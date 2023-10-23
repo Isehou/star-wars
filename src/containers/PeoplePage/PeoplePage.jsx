@@ -6,15 +6,20 @@ import PeopleList from "../../components/PeopleList";
 import { getPeopleId, getPeopleImage } from "../../api/getPeopleData";
 import { getApiResource } from "../../api/network";
 import { API_PEOPLE } from "../../api/api";
+import QueryParams from "../../hooks/queryParams";
 import "./people-page.css";
 import "../containers-styles.css";
 
 const PeoplePage = ({ setErrorApi }) => {
   const [people, setPeople] = useState(null);
 
+  const query = QueryParams();
+  console.log(query);
+
   const getResource = async (url) => {
     const res = await getApiResource(url);
 
+    console.log(res);
     if (res) {
       const peopleList = res.results.map(({ name, url }) => {
         const id = getPeopleId(url);
@@ -34,7 +39,7 @@ const PeoplePage = ({ setErrorApi }) => {
   };
 
   useEffect(() => {
-    getResource("https://swapi.dev/api/people/?page=2");
+    getResource(API_PEOPLE);
   }, []);
 
   return (
