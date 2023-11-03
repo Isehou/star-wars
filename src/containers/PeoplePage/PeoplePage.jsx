@@ -12,9 +12,12 @@ import "../containers-styles.css";
 
 const PeoplePage = ({ setErrorApi }) => {
   const [people, setPeople] = useState(null);
+  const [prevPage, setPrevPage] = useState(null);
+  const [nextPage, setNextPage] = useState(null);
+  const [counterPage, setCounterPage] = useState(1);
 
   const query = QueryParams();
-  console.log(query);
+  const queryPage = query.get("page");
 
   const getResource = async (url) => {
     const res = await getApiResource(url);
@@ -30,8 +33,9 @@ const PeoplePage = ({ setErrorApi }) => {
           img,
         };
       });
-
       setPeople(peopleList);
+      setPrevPage(res.previous);
+      setNextPage(res.next);
       setErrorApi(false);
     } else {
       setErrorApi(true);
@@ -39,8 +43,8 @@ const PeoplePage = ({ setErrorApi }) => {
   };
 
   useEffect(() => {
-    getResource(API_PEOPLE);
-  }, []);
+    getResource(API_PEOPLE + queryPage);
+  }, [queryPage]);
 
   return (
     <div>

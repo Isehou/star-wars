@@ -15,6 +15,9 @@ const checkProtocol = (url) => {
   return HTTP;
 };
 
+export const getPeoplePageId = (url) => {
+  console.log(url);
+};
 const getId = (url, category) => {
   const protocol = checkProtocol(url);
   const id = url
@@ -22,11 +25,6 @@ const getId = (url, category) => {
     .replace(/\//g, "");
   return id;
 };
-
-// const getId = (url, category) => {
-//   const id = url.replace(HTTPS + SWAPI_ROOT + category, "").replace(/\//g, "");
-//   return id;
-// };
 
 export const getPeopleId = (url) => getId(url, SWAPI_PEOPLE);
 

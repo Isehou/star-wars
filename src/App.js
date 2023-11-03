@@ -7,10 +7,11 @@ import PeoplePage from "./containers/PeoplePage";
 import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
 import "./App.css";
 
+
 function App() {
   const routeLinks = [
     { label: "Home", link: "/home" },
-    { label: "People", link: "/people" },
+    { label: "People", link: "/people/?page=1" },
     { label: "Search", link: "/search" },
     { label: "Not found", link: "*", exact: false },
   ];
@@ -22,7 +23,6 @@ function App() {
         <Routes>
           <Route path="/home" element={<HomePage />}></Route>
           <Route path="/people" element={<PeoplePage />}></Route>
-          {/* <Route path="/people/?page=2" element={<PeoplePage />}></Route> */}
           <Route path="/*" element={<NotFoundPage />}></Route>
         </Routes>
       </div>
