@@ -7,13 +7,12 @@ import PeoplePage from "./containers/PeoplePage";
 import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
 import "./App.css";
 
-
 function App() {
   const routeLinks = [
     { label: "Home", link: "/home" },
     { label: "People", link: "/people/?page=1" },
     { label: "Search", link: "/search" },
-    { label: "Not found", link: "*", exact: false },
+    { label: "Not found", link: "404", exact: false },
   ];
 
   return (
