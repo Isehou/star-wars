@@ -5,13 +5,12 @@
 }
 .container {
   max-width: var(--width-max);
-  padding: 30px 0;
+  padding: 10px;
 }
 .header-list {
   display: flex;
   list-style: none;
-  margin-left: 50px;
-  /* background-color: white; */
+  margin-left: 10px;
   height: 50px;
 }
 .header-link {
@@ -41,7 +40,6 @@
 }
 
 @media screen and (max-width: 1400px) {
-  .wrapper {
-    padding: 30px;
+  .container {
   }
 }

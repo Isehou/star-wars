@@ -3,10 +3,16 @@ import PropTypes from "prop-types";
 
 import { withErrorApi } from "../../hoc-helpers/withErrorApi";
 import PeopleList from "../../components/PeopleList";
-import { getPeopleId, getPeopleImage } from "../../api/getPeopleData";
+import PeopleNavigation from "../../components/PeopleNavigation/PeopleNavigation";
+import {
+  getPeopleId,
+  getPeopleImage,
+  getPeoplePageId,
+} from "../../api/getPeopleData";
 import { getApiResource } from "../../api/network";
 import { API_PEOPLE } from "../../api/api";
 import QueryParams from "../../hooks/queryParams";
+
 import "./people-page.css";
 import "../containers-styles.css";
 
@@ -22,7 +28,6 @@ const PeoplePage = ({ setErrorApi }) => {
   const getResource = async (url) => {
     const res = await getApiResource(url);
 
-    console.log(res);
     if (res) {
       const peopleList = res.results.map(({ name, url }) => {
         const id = getPeopleId(url);
@@ -36,6 +41,7 @@ const PeoplePage = ({ setErrorApi }) => {
       setPeople(peopleList);
       setPrevPage(res.previous);
       setNextPage(res.next);
+      setCounterPage(getPeoplePageId(url));
       setErrorApi(false);
     } else {
       setErrorApi(true);
@@ -48,7 +54,12 @@ const PeoplePage = ({ setErrorApi }) => {
 
   return (
     <div>
-      <h1 className="title__text">CHARACTER</h1>
+      <PeopleNavigation
+        getResource={getResource}
+        prevPage={prevPage}
+        nextPage={nextPage}
+        counterPage={counterPage}
+      />
       {people && <PeopleList people={people} />}
     </div>
   );

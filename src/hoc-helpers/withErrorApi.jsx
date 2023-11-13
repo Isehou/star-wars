@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
+import NotFoundPage from "../containers/NotFoundPage/NotFoundPage";
 
 export const withErrorApi = (View) => {
   return (props) => {
@@ -7,7 +7,7 @@ export const withErrorApi = (View) => {
     return (
       <>
         {errorApi ? (
-          <ErrorMessage />
+          <NotFoundPage />
         ) : (
           <View setErrorApi={setErrorApi} {...props} />
         )}

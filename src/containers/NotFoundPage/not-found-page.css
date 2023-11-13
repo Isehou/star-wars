@@ -1,24 +1,19 @@
 .nfp {
-  display: flex;
-  justify-content: center;
-  color: #fff;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-.nfp-number {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 100pt;
-  height: 100%;
+  height: calc(100vh - 70px);
+  width: 100%;
 }
-.nfp-text {
-  width: 700px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 28pt;
-  color: var(--color-yellow);
+.img {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 100%;
 }
