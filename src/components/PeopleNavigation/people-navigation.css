@@ -1,0 +1,11 @@
+.pn-wrapper {
+}
+.link {
+  margin: 10px;
+}
+.buttons {
+  padding: 5px 10px;
+  font-size: 12pt;
+
+  cursor: pointer;
+}

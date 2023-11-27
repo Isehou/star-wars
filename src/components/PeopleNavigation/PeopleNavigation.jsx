@@ -1,9 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./people-navigation.css";
 
-function PeopleNavigation() {
+function PeopleNavigation({ getResource, prevPage, nextPage, counterPage }) {
+  const handleChangeNext = () => getResource(nextPage);
+  const handleChangePrev = () => getResource(prevPage);
   return (
-    <div>
-      <h1 className="title__text">CHARACTER</h1>
+    <div className="pn-wrapper">
+      <Link className="link" to={`/people/?page=${counterPage - 1}`}>
+        <button
+          onClick={handleChangePrev}
+          disabled={!prevPage}
+          className="buttons"
+        >
+          Previous
+        </button>
+      </Link>
+      <Link className="link" to={`/people/?page=${counterPage + 1}`}>
+        <button
+          onClick={handleChangeNext}
+          disabled={!nextPage}
+          className="buttons"
+        >
+          Next
+        </button>
+      </Link>
     </div>
   );
 }
