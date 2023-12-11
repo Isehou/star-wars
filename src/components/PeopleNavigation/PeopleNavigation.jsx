@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UiButton from "../UI-kit/UiButton/UiButton";
+
 import "./people-navigation.css";
 
 function PeopleNavigation({ getResource, prevPage, nextPage, counterPage }) {
@@ -8,22 +10,18 @@ function PeopleNavigation({ getResource, prevPage, nextPage, counterPage }) {
   return (
     <div className="pn-wrapper">
       <Link className="link" to={`/people/?page=${counterPage - 1}`}>
-        <button
+        <UiButton
+          text="Previous"
           onClick={handleChangePrev}
           disabled={!prevPage}
-          className="buttons"
-        >
-          Previous
-        </button>
+        ></UiButton>
       </Link>
       <Link className="link" to={`/people/?page=${counterPage + 1}`}>
-        <button
+        <UiButton
+          text="Next"
           onClick={handleChangeNext}
           disabled={!nextPage}
-          className="buttons"
-        >
-          Next
-        </button>
+        ></UiButton>
       </Link>
     </div>
   );

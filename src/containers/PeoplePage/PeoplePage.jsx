@@ -13,8 +13,8 @@ import { getApiResource } from "../../api/network";
 import { API_PEOPLE } from "../../api/api";
 import QueryParams from "../../hooks/queryParams";
 
-import "./people-page.css";
 import "../containers-styles.css";
+import "./people-page.css";
 
 const PeoplePage = ({ setErrorApi }) => {
   const [people, setPeople] = useState(null);

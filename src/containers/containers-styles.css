@@ -1,8 +1,4 @@
 .title__text {
   color: var(--theme-default-header);
   transition: var(--transition);
-  margin-left: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
-import "./home-page.css";
 import "../containers-styles.css";
+import "./home-page.css";
 
 function HomePage() {
   return (
